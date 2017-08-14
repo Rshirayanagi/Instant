@@ -1,0 +1,6 @@
+<p>アカウント登録のお知らせ <%= @email %></p>
+
+<p>メール内のリンクからアカウントを有効化させてください。</p>
+<p>また、このメールにお心あたりのない方はこのメールを破棄下さい。</p>
+
+<p><%= link_to 'アカウントを有効にする', confirmation_url(@resource, confirmation_token: @token) %></p>

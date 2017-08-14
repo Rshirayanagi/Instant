@@ -19,8 +19,13 @@
       <Ul>
         <li><%= link_to "新規投稿", new_picture_path %></li>
         <li><%= link_to "Instant一覧", pictures_path %></li>
-        <li><a href="#">ログイン</a></li>
-        <li><a href="#">サインアップ</a></li>
+        <% if user_signed_in? %>
+        <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path  %></li>
+        <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
