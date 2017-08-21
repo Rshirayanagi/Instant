@@ -7,8 +7,11 @@
     </div>
     <% @pictures.each do |picture| %>
     <div class="row">
+      <p><%= profile_img(picture.user) %><%= picture.user.name %>が投稿しました。</p>
       <h4><strong><%= picture.title %></strong></h4>
       <p><%= picture.content %></p>
+      <p><%= image_tag(picture.image) %></p>
+
       <%= link_to "編集する", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
       <%= link_to "削除する", picture_path(picture.id), data: { confirm: '削除していいですか？', method: :delete }, class: 'btn btn-default btn-sm btn-danger' %>
     </div>
