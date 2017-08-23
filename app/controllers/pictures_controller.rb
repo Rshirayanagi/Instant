@@ -27,7 +27,7 @@ class PicturesController < ApplicationController
   end
 
   def edit
-
+    @picture.image.cache! unless @picture.image.blank?
   end
 
   def update
@@ -58,7 +58,7 @@ end
 
   private
     def pictures_params
-      params.require(:picture).permit(:title, :content)
+      params.require(:picture).permit(:title, :content, :image, :image_cache, :image_url)
     end
 
     def set_picture

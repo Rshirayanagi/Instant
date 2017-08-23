@@ -6,9 +6,13 @@
     <%= form_for(@picture) do |f| %>
       <%= f.hidden_field :title %>
       <%= f.hidden_field :content %>
-      <p class="post-image">写真:<%= image_tag(@picture.image_url) %></p>
+      <%= f.hidden_field :image_cache %>
+    
       <p>タイトル:<%= @picture.title %></p>
       <p>本文:<%= @picture.content %></p>
+      <p class="post-image">
+      写真:<%= image_tag(@picture.image_url) %>
+      </p>
      </div>
       <%= f.submit "登録する",class: 'btn btn-primary btn-block' %>
     <% end %>

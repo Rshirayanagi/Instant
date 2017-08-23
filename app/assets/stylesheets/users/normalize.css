@@ -1,3 +1,6 @@
-img{
+img {
+  max-width: 100%;
+}
+.post-image {
   max-width: 100%;
 }
