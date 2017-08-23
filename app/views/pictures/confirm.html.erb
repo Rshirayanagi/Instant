@@ -7,14 +7,14 @@
       <%= f.hidden_field :title %>
       <%= f.hidden_field :content %>
       <%= f.hidden_field :image_cache %>
-    
+
       <p>タイトル:<%= @picture.title %></p>
       <p>本文:<%= @picture.content %></p>
       <p class="post-image">
       写真:<%= image_tag(@picture.image_url) %>
       </p>
      </div>
-      <%= f.submit "登録する",class: 'btn btn-primary btn-block' %>
+      <%= f.submit "投稿する",class: 'btn btn-primary btn-block' %>
     <% end %>
 
     <%= form_for(@picture, url: new_picture_path, method: 'get') do |f| %>
